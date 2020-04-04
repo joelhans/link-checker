@@ -35,7 +35,7 @@ echo -e "Configuration: Honor robot exclusions: $GREEN$2$NC, Exclude urls that m
 
 # Create command and remove extra quotes
 # Put result in variable to be able to iterate on it later
-OUTPUT="$(blc "$1" "$EXCLUDE" $SET_FOLLOW -v | sed 's/"//g')"
+OUTPUT="$(blc "$1" "$EXCLUDE" -rovf | sed 's/"//g')"
 
 # Count lines of output
 TOTAL_COUNT="$(wc -l <<< "$OUTPUT")"
